@@ -1,0 +1,150 @@
+﻿Sample_ID,ORDER,GROUP,SamplingYear,SamplingDate,Sample_Type,Location,Missing_data_snps,N_amps_tree,pGPL2,pGPL1,GENOASSIGN,Site_code,Site,Species_code,Genus,species,Lat,Lon
+Bd_Campana,1,Reference,,,isolate,,0.0620155,152,0.999999966,3.44E-08,2,,,,,,,
+SERDP_19_81,2,Pennsylvania,2019,3/29/19,swab,PA,0,159,0.443956323,0.556043677,0,1,Wood Lab,PSCR,Pseudacris,crucifer,41.56972,-80.4525
+SERDP_100,3,Pennsylvania,2017,8/14/17,swab,PA,0.0465116,146,0.999998968,1.03E-06,2,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+OWR41,4,Nevada,2017,5/8/17,isolate,NV,0,176,2.36E-06,0.999997638,1,4,Overton Wildlife Management Area,,Rana,catesbeiana,36.516331,-114.413044
+SERDP_18_40,5,Pennsylvania,2018,4/22/18,swab,PA,0.24031,106,0.999540435,0.000459565,2,2,RV,NOVI,Notophthalmus,viridescens,41.82667,-80.5075
+AR340,7,Nevada,2017,5/24/17,isolate,NV,0,176,0.999976892,2.31E-05,2,1,"Beatty, Nevada",,Rana,catesbeiana,36.91472,-116.754122
+SERDP_18_33,8,Pennsylvania,2018,5/4/18,swab,PA,0,167,0.999999983,1.69E-08,2,3,Housing/Hatchery,ANAM,Anaxyrus,americanus,41.64414,-80.42944
+OWR43,9,Nevada,2018,4/18/18,isolate,NV,0.0232558,115,2.84E-06,0.999997155,1,4,Overton Wildlife Management Area,,Rana,catesbeiana,36.516331,-114.413044
+AR345,10,Nevada,2017,5/27/17,swab,NV,0,172,0.999977963,2.20E-05,2,1,"Beatty, Nevada",,Rana,catesbeiana,36.91472,-116.754122
+Bd_CJB5_2,11,Reference,,,isolate,,0,,0.999997924,2.08E-06,2,,,,,,,
+SERDP_19_91,12,Pennsylvania,2019,4/8/19,swab,PA,0.0155039,154,0.912124608,0.087875392,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+Bd_PAB01,13,Reference,,,isolate,,0.0232558,,9.25E-06,0.999990745,1,,,,,,,
+SERDP_19_93,14,Pennsylvania,2019,4/14/19,swab,PA,0,157,0.999999952,4.75E-08,2,1,Wood Lab,PSCR,Pseudacris,crucifer,41.56972,-80.4525
+SERDP_19_144,15,Pennsylvania,2019,6/29/19,swab,PA,0.0542636,168,0.888676019,0.111323981,0,1,Wood Lab,LISY,Lithobates,sylvaticus,41.56972,-80.4525
+SERDP_18_36,16,Pennsylvania,2018,5/4/18,swab,PA,0,167,1.73E-06,0.999998267,1,3,Housing/Hatchery,LICA,Lithobates,catesbeianus,41.64414,-80.42944
+SERDP_18_125,17,Pennsylvania,2018,7/31/18,swab,PA,0,171,6.21E-06,0.999993788,1,5,Real Cow Pit [Sue and William Thompson],LICL,Lithobates,clamitans,41.67528,-80.5125
+BP65,18,Nevada,2018,4/14/18,swab,NV,0,114,0.999879876,0.000120124,2,1,"Beatty, Nevada",,Anaxrus,nelsoni,36.998383,-116.719498
+SERDP_18_114,19,Pennsylvania,2018,7/12/18,swab,PA,0,165,2.52E-06,0.999997475,1,5,Real Cow Pit [Sue and William Thompson],DEFU,Desmognathus,fuscus,41.67528,-80.5125
+SERDP_19_74,20,Pennsylvania,2019,6/19/19,swab,PA,0.0775194,128,0.371497486,0.628502514,0,2,RV,LICL,Lithobates,clamitans,41.82667,-80.5075
+Bd_JEL427,21,Reference,,,isolate,,0.0310078,,0.999999962,3.80E-08,2,,,,,,,
+SERDP_19_86,22,Pennsylvania,2019,3/30/19,swab,PA,0,170,0.999999912,8.77E-08,2,9,,LIPI,Lithobates,pipiens,41.621208,-80.468131
+SERDP_18_41,23,Pennsylvania,2018,4/22/18,swab,PA,0,173,0.976850644,0.023149356,0,2,RV,PSCR,Pseudacris,crucifer,41.82667,-80.5075
+SERDP_18_44,24,Pennsylvania,2018,5/4/18,swab,PA,0.0542636,157,0.999999703,2.97E-07,2,3,Housing/Hatchery,PSCR,Pseudacris,crucifer,41.64414,-80.42944
+SERDP_19_83,25,Pennsylvania,2019,3/29/19,swab,PA,0,168,0.202059592,0.797940408,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+Bd_JEL433,26,Reference,,,isolate,,0.0232558,,0.999999952,4.77E-08,2,,,,,,,
+SMR30,27,Nevada,2017,3/24/17,isolate,NV,0,175,0.999999955,4.51E-08,2,5,Spring Mountain Ranch,,Pseudacris,regilla,36.068931,-115.460189
+OWR30,28,Nevada,2017,5/8/17,isolate,NV,0,176,0.999999809,1.91E-07,2,4,Overton Wildlife Management Area,,Pseudacris,regilla,36.516331,-114.413044
+SERDP_19_58,29,Pennsylvania,2019,5/22/19,swab,PA,0.139535,134,3.99E-05,0.999960111,1,2,RV,LICA,Lithobates,catesbeianus,41.82667,-80.5075
+OWR48,30,Nevada,2018,4/18/18,isolate,NV,0.0232558,116,3.18E-05,0.999968235,1,4,Overton Wildlife Management Area,,Rana,catesbeiana,36.516331,-114.413044
+BP77,31,Nevada,2018,4/14/18,swab,NV,0,124,0.999967073,3.29E-05,2,1,"Beatty, Nevada",,Anaxrus,nelsoni,36.994535,-116.718524
+SERDP_18_42,32,Pennsylvania,2018,5/5/18,swab,PA,0,171,5.71E-06,0.999994289,1,4,Cow Pit,LICA,Lithobates,catesbeianus,41.75694,-80.71778
+SERDP_18_79,33,Pennsylvania,2018,6/23/18,swab,PA,0.186047,115,5.16E-07,0.999999484,1,4,Cow Pit,LICA,Lithobates,catesbeianus,41.75694,-80.71778
+SERDP_19_84,34,Pennsylvania,2019,3/29/19,swab,PA,0,166,0.413047661,0.586952339,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+SERDP_18_34,35,Pennsylvania,2018,4/14/18,swab,PA,0.100775,142,3.08E-06,0.999996921,1,5,Real Cow Pit [Sue and William Thompson],DEFU,Desmognathus,fuscus,41.67528,-80.5125
+LBP122,36,Nevada,2018,3/29/18,swab,NV,0,118,9.95E-08,0.999999901,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+BP23,37,Nevada,2016,3/24/16,swab,NV,0.00775194,112,0.999963843,3.62E-05,2,1,"Beatty, Nevada",,Pseudacris,regilla,36.994535,-116.718524
+SMR26,38,Nevada,2017,3/24/17,isolate,NV,0,176,0.999999925,7.52E-08,2,5,Spring Mountain Ranch,,Pseudacris,regilla,36.068931,-115.460189
+Bd_MLA1,39,Reference,,,isolate,,0,,4.38E-07,0.999999562,1,,,,,,,
+SERDP_19_155,40,Pennsylvania,2019,6/20/19,swab,PA,0.248062,114,0.922604441,0.077395559,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+SERDP_18_72,41,Pennsylvania,2018,6/1/18,swab,PA,0,171,0.999999912,8.85E-08,2,3,Housing/Hatchery,HYVE,Hyla,versicolor,41.64414,-80.42944
+OWR47,42,Nevada,2018,4/18/18,swab,NV,0.0232558,109,0.000607075,0.999392925,1,4,Overton Wildlife Management Area,,Rana,catesbeiana,36.516331,-114.413044
+LBP117,43,Nevada,2018,3/29/18,swab,NV,0,116,9.80E-08,0.999999902,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+Bd_JEL359,44,Reference,,,isolate,,0,,2.61E-05,0.999973879,1,,,,,,,
+SERDP_45,45,Pennsylvania,2017,3/7/17,swab,PA,0.0775194,137,7.33E-06,0.999992671,1,4,Cow Pit,LICA,Lithobates,catesbeianus,41.75694,-80.71778
+SERDP_18_139,46,Pennsylvania,2018,6/29/18,swab,PA,0.00775194,159,0.999999912,8.77E-08,2,3,Housing/Hatchery,HYVE,Hyla,versicolor,41.64414,-80.42944
+SERDP_18_38,47,Pennsylvania,2018,4/14/18,swab,PA,0,174,0.999999895,1.05E-07,2,4,Cow Pit,LIPI,Lithobates,pipiens,41.75694,-80.71778
+SERDP_18_136,48,Pennsylvania,2018,4/13/18,swab,PA,0.0232558,173,0.999999895,1.05E-07,2,3,Housing/Hatchery,LIPI,Lithobates,pipiens,41.64414,-80.42944
+SERDP_18_150,49,Pennsylvania,2018,9/30/18,swab,PA,0.00775194,156,0.806227744,0.193772256,0,5,Real Cow Pit [Sue and William Thompson],LICL,Lithobates,clamitans,41.67528,-80.5125
+SERDP_19_148,50,Pennsylvania,2019,4/5/19,swab,PA,0.0232558,162,0.99999985,1.50E-07,2,3,Housing/Hatchery,LIPI,Lithobates,pipiens,41.64414,-80.42944
+SERDP_19_125,51,Pennsylvania,2019,10/4/19,swab,PA,0.155039,114,5.43E-06,0.999994569,1,4,Cow Pit,LICA,Lithobates,catesbeianus,41.75694,-80.71778
+SERDP_18_123,52,Pennsylvania,2018,7/16/18,swab,PA,0,171,0.944882916,0.055117084,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+SERDP_19_56,53,Pennsylvania,2019,6/23/19,swab,PA,0.0232558,147,0.000282459,0.999717541,1,4,Cow Pit,LICL,Lithobates,clamitans,41.75694,-80.71778
+Bd_JEL627,54,Reference,,,isolate,,0,,0.999957115,4.29E-05,2,,,,,,,
+OWR40,55,Nevada,2017,5/8/17,isolate,NV,0,176,7.45E-06,0.999992553,1,4,Overton Wildlife Management Area,,Rana,catesbeiana,36.516331,-114.413044
+CC93,56,Nevada,2018,3/27/18,swab,NV,0.0232558,110,0.999987699,1.23E-05,2,2,Corn Creek,,Rana,onca,36.438742,-115.358521
+LBP116,57,Nevada,2017,3/16/17,isolate,NV,0,176,9.95E-08,0.999999901,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+SERDP_18_149,58,Pennsylvania,2018,9/30/18,swab,PA,0.0697674,150,8.53E-05,0.999914692,1,2,RV,LICA,Lithobates,catesbeianus,41.82667,-80.5075
+SERDP_19_163,59,Pennsylvania,2019,6/29/19,swab,PA,0.0387597,161,0.999999868,1.32E-07,2,3,Housing/Hatchery,ANAM,Anaxyrus,americanus,41.64414,-80.42944
+LBP128,60,Nevada,2018,3/29/18,isolate,NV,0.0232558,115,1.65E-07,0.999999835,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+SERDP_19_130,61,Pennsylvania,2019,10/4/19,swab,PA,0,155,7.90E-07,0.99999921,1,4,Cow Pit,LICA,Lithobates,catesbeianus,41.75694,-80.71778
+SERDP_18_32,62,Pennsylvania,2018,5/12/18,swab,PA,0,168,0.99862968,0.00137032,2,2,RV,PSCR,Pseudacris,crucifer,41.82667,-80.5075
+Bd_JEL267,63,Reference,,,isolate,,0,,2.41E-05,0.999975853,1,,,,,,,
+Bd_SRS812,64,Reference,,,isolate,,0,,8.27E-05,0.999917271,1,,,,,,,
+BP18,65,Nevada,2016,3/22/16,swab,NV,0.0387597,113,0.99995568,4.43E-05,2,1,"Beatty, Nevada",,Anaxrus,nelsoni,36.994535,-116.718524
+OWR33,66,Nevada,2017,5/8/17,isolate,NV,0,176,0.999999791,2.09E-07,2,4,Overton Wildlife Management Area,,Pseudacris,regilla,36.516331,-114.413044
+SERDP_18_122,67,Pennsylvania,2018,7/12/18,swab,PA,0.0620155,145,1.04E-05,0.999989581,1,5,Real Cow Pit [Sue and William Thompson],PSRU,Pseudotriton,ruber,41.67528,-80.5125
+SMR25,68,Nevada,2017,3/24/17,isolate,NV,0,176,0.99999996,4.02E-08,2,5,Spring Mountain Ranch,,Pseudacris,regilla,36.068931,-115.460189
+Bd_CJB7,69,Reference,,,isolate,,0,,0.99996056,3.94E-05,2,,,,,,,
+Bd_CJB4,70,Reference,,,isolate,,0.0232558,161,1.11E-05,0.9999889,1,,,,,,,
+SERDP_19_159,71,Pennsylvania,2019,6/25/19,swab,PA,0.24031,130,0.91943277,0.08056723,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+Bd_JEL271,72,Reference,,,isolate,,0,,0.999960223,3.98E-05,2,,,,,,,
+CC101,73,Nevada,2018,3/27/18,swab,NV,0.0620155,101,0.999956507,4.35E-05,2,2,Corn Creek,,Bufo,woodhousii,36.438742,-115.358521
+SERDP_19_152,74,Pennsylvania,2019,6/24/19,swab,PA,0.139535,126,0.999999019,9.81E-07,2,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+CC82,75,Nevada,2018,3/27/18,swab,NV,0.0232558,111,0.999971949,2.81E-05,2,2,Corn Creek,,Bufo,woodhousii,36.438742,-115.358521
+CC97,76,Nevada,2018,3/27/18,swab,NV,0.0155039,116,0.999974984,2.50E-05,2,2,Corn Creek,,Bufo,woodhousii,36.438742,-115.358521
+SERDP_19_61,77,Pennsylvania,2019,4/13/19,swab,PA,0,171,0.999999895,1.05E-07,2,4,Cow Pit,LIPI,Lithobates,pipiens,41.75694,-80.71778
+SERDP_18_182,78,Pennsylvania,2018,8/18/18,swab,PA,0.333333,112,0.999974964,2.50E-05,2,6,Tuttle,LICL,Lithobates,clamitans,41.72583,-80.67972
+SERDP_19_161,79,Pennsylvania,2019,6/20/19,swab,PA,0,169,0.899641193,0.100358807,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+SMR51,80,Nevada,2017,3/24/17,isolate,NV,0,176,0.999999925,7.52E-08,2,5,Spring Mountain Ranch,,Pseudacris,regilla,36.068931,-115.460189
+OWR31,81,Nevada,2017,5/8/17,isolate,NV,0,175,0.999999941,5.89E-08,2,4,Overton Wildlife Management Area,,Pseudacris,regilla,36.516331,-114.413044
+SERDP_18_135,82,Pennsylvania,2018,4/3/18,swab,PA,0,173,3.46E-06,0.999996542,1,4,Cow Pit,LICL,Lithobates,clamitans,41.75694,-80.71778
+SERDP_19_120,83,Pennsylvania,2019,10/13/19,swab,PA,0.0232558,145,2.46E-06,0.99999754,1,5,Real Cow Pit [Sue and William Thompson],DEFU,Desmognathus,fuscus,41.67528,-80.5125
+SERDP_18_68,84,Pennsylvania,2018,5/12/18,swab,PA,0.0155039,164,8.65E-07,0.999999135,1,2,RV,LICA,Lithobates,catesbeianus,41.82667,-80.5075
+SERDP_19_145,85,Pennsylvania,2019,6/25/19,swab,PA,0.0930233,155,0.906131897,0.093868103,0,1,Wood Lab,LISY,Lithobates,sylvaticus,41.56972,-80.4525
+OWR32,86,Nevada,2017,5/8/17,isolate,NV,0,175,0.999999872,1.28E-07,2,4,Overton Wildlife Management Area,,Pseudacris,regilla,36.516331,-114.413044
+AR342,87,Nevada,2017,5/25/17,isolate,NV,0,176,0.999977876,2.21E-05,2,1,"Beatty, Nevada",,Rana,catesbeiana,36.91472,-116.754122
+SERDP_18_28,88,Pennsylvania,2018,4/27/18,swab,PA,0,169,0.999999895,1.05E-07,2,3,Housing/Hatchery,LIPI,Lithobates,pipiens,41.64414,-80.42944
+SERDP_44,89,Pennsylvania,2017,3/7/17,swab,PA,0.0232558,150,1.98E-06,0.999998023,1,7,Beaver Pond,LICA,Lithobates,catesbeianus,41.90278,-80.74417
+BP81,90,Nevada,2018,4/14/18,swab,NV,0,123,0.999985312,1.47E-05,2,1,"Beatty, Nevada",,Rana,catesbeiana,36.994535,-116.718524
+SERDP_19_146,91,Pennsylvania,2019,8/7/19,swab,PA,0.248062,119,0.927232346,0.072767654,0,3,Housing/Hatchery,LIPI,Lithobates,pipiens,41.64414,-80.42944
+OWR37,92,Nevada,2017,5/8/17,isolate,NV,0,176,7.45E-06,0.999992553,1,4,Overton Wildlife Management Area,,Rana,catesbeiana,36.516331,-114.413044
+SERDP_18_134,93,Pennsylvania,2018,4/3/18,swab,PA,0,174,0.999999912,8.75E-08,2,4,Cow Pit,LIPI,Lithobates,pipiens,41.75694,-80.71778
+LBP112,94,Nevada,2017,3/16/17,isolate,NV,0,176,9.95E-08,0.999999901,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+BP80,95,Nevada,2018,4/14/18,isolate,NV,0,124,0.999985312,1.47E-05,2,1,"Beatty, Nevada",,Rana,catesbeiana,36.994535,-116.718524
+AR343,96,Nevada,2017,5/26/17,isolate,NV,0,176,0.999979656,2.03E-05,2,1,"Beatty, Nevada",,Rana,catesbeiana,36.91472,-116.754122
+LBP124,97,Nevada,2018,3/29/18,swab,NV,0,124,9.95E-08,0.999999901,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+SERDP_54,98,Pennsylvania,2017,5/10/17,swab,PA,0.255814,134,0.000213484,0.999786516,1,6,Tuttle,LICA,Lithobates,catesbeianus,41.72583,-80.67972
+Bd_JEL429,99,Reference,,,isolate,,0,,0.999999891,1.09E-07,2,,,,,,,
+BP22,100,Nevada,2016,3/23/16,swab,NV,0.0232558,103,0.99987032,0.00012968,2,1,"Beatty, Nevada",,Pseudacris,regilla,36.994535,-116.718524
+SERDP_19_90,101,Pennsylvania,2019,4/6/19,swab,PA,0.0232558,160,2.03E-06,0.99999797,1,3,Housing/Hatchery,LICA,Lithobates,catesbeianus,41.64414,-80.42944
+LBP114,102,Nevada,2017,3/16/17,isolate,NV,0,176,9.95E-08,0.999999901,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+SERDP_19_28,103,Pennsylvania,2019,4/13/19,swab,PA,0,170,0.999999906,9.40E-08,2,4,Cow Pit,LIPI,Lithobates,pipiens,41.75694,-80.71778
+OWR39,104,Nevada,2017,5/8/17,isolate,NV,0,176,7.35E-06,0.999992652,1,4,Overton Wildlife Management Area,,Rana,catesbeiana,36.516331,-114.413044
+SMR24,105,Nevada,2017,3/24/17,isolate,NV,0,176,0.999999941,5.89E-08,2,5,Spring Mountain Ranch,,Pseudacris,regilla,36.068931,-115.460189
+BP56,106,Nevada,2018,5/21/17,isolate,NV,0,176,0.999963515,3.65E-05,2,1,"Beatty, Nevada",,Pseudacris,regilla,36.998059,-116.717789
+AR335,107,Nevada,2017,5/22/17,swab,NV,0,172,0.999986118,1.39E-05,2,1,"Beatty, Nevada",,Anaxrus,nelsoni,36.91472,-116.754122
+Bd_JEL310,108,Reference,,,isolate,,0.0465116,151,0.999999965,3.46E-08,2,,,,,,,
+SERDP_19_71,109,Pennsylvania,2019,5/22/19,swab,PA,0.178295,119,3.76E-05,0.999962362,1,5,Real Cow Pit [Sue and William Thompson],DEFU,Desmognathus,fuscus,41.67528,-80.5125
+Bd_TST75,110,Reference,,,isolate,,0,,4.87E-06,0.99999513,1,,,,,,,
+SERDP_19_160,111,Pennsylvania,2019,6/29/19,swab,PA,0,169,0.999999946,5.41E-08,2,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+SERDP_47,112,Pennsylvania,2017,4/7/17,swab,PA,0.232558,113,0.00014641,0.99985359,1,6,Tuttle,LICA,Lithobates,catesbeianus,41.72583,-80.67972
+SERDP_19_158,113,Pennsylvania,2019,7/11/19,swab,PA,0.162791,140,0.865230306,0.134769694,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+Bd_Lb_Aber,114,Reference,,,isolate,,0,,0.999999723,2.77E-07,2,,,,,,,
+Bd_JEL275,115,Reference,,,isolate,,0,,0.999999967,3.34E-08,2,,,,,,,
+SERDP_18_70,116,Pennsylvania,2018,5/12/18,swab,PA,0,174,0.950514373,0.049485627,0,2,RV,LICL,Lithobates,clamitans,41.82667,-80.5075
+LBP130,117,Nevada,2018,3/29/18,swab,NV,0.0232558,110,1.63E-07,0.999999837,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+SERDP_19_15,118,Pennsylvania,2019,4/13/19,swab,PA,0.263566,121,0.078491552,0.921508448,0,4,Cow Pit,LICL,Lithobates,clamitans,41.75694,-80.71778
+AR339,119,Nevada,2017,5/23/17,isolate,NV,0,176,0.999979656,2.03E-05,2,1,"Beatty, Nevada",,Rana,catesbeiana,36.91472,-116.754122
+OWR36,120,Nevada,2017,5/8/17,isolate,NV,0,176,7.35E-06,0.999992652,1,4,Overton Wildlife Management Area,,Rana,catesbeiana,36.516331,-114.413044
+BP74,121,Nevada,2018,4/14/18,swab,NV,0,117,0.999999905,9.52E-08,2,1,"Beatty, Nevada",,Pseudacris,regilla,36.998383,-116.719498
+SERDP_19_85,122,Pennsylvania,2019,3/30/19,swab,PA,0,163,0.999999941,5.92E-08,2,9,,LIPI,Lithobates,pipiens,41.621208,-80.468131
+LBP111,123,Nevada,2017,3/16/17,swab,NV,0,175,9.82E-08,0.999999902,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+LBP115,124,Nevada,2017,3/16/17,isolate,NV,0,176,9.82E-08,0.999999902,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+SERDP_18_124,125,Pennsylvania,2018,7/16/18,swab,PA,0.155039,133,0.984622139,0.015377861,0,1,Wood Lab,PSCR,Pseudacris,crucifer,41.56972,-80.4525
+SERDP_19_51,126,Pennsylvania,2019,5/22/19,swab,PA,0.0232558,154,5.44E-06,0.999994557,1,2,RV,LICA,Lithobates,catesbeianus,41.82667,-80.5075
+SERDP_19_154,127,Pennsylvania,2019,8/8/19,swab,PA,0.178295,129,0.807575865,0.192424135,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+SERDP_48,128,Pennsylvania,2017,5/9/17,swab,PA,0.271318,110,5.05E-05,0.999949521,1,7,Beaver Pond,LICA,Lithobates,catesbeianus,41.90278,-80.74417
+LBP131,129,Nevada,2018,3/29/18,swab,NV,0.00775194,110,1.67E-07,0.999999833,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+Bd_JAM81,130,Reference,,,isolate,,0,,0.999945484,5.45E-05,2,,,,,,,
+Bd_ev001,131,Reference,,,isolate,,0.0542636,,0.999999953,4.66E-08,2,,,,,,,
+OWR51,132,Nevada,2018,4/18/18,swab,NV,0.0310078,166,0.9999998,2.00E-07,2,4,Overton Wildlife Management Area,,Pseudacris,regilla,36.516331,-114.413044
+BP75,133,Nevada,2018,4/14/18,swab,NV,0,118,0.999966563,3.34E-05,2,1,"Beatty, Nevada",,Pseudacris,regilla,36.994535,-116.718524
+SERDP_18_137,134,Pennsylvania,2018,4/13/18,swab,PA,0,170,0.999999901,9.93E-08,2,3,Housing/Hatchery,PSCR,Pseudacris,crucifer,41.64414,-80.42944
+SERDP_18_37,135,Pennsylvania,2018,5/4/18,swab,PA,0,174,0.999999945,5.51E-08,2,3,Housing/Hatchery,LIPI,Lithobates,pipiens,41.64414,-80.42944
+Bd_JEL410,136,Reference,,,isolate,,0.0232558,,0.999999978,2.22E-08,2,,,,,,,
+SERDP_18_63,137,Pennsylvania,2018,6/15/18,swab,PA,0,174,0.896303433,0.103696567,0,1,Wood Lab,LICL,Lithobates,clamitans,41.56972,-80.4525
+OWR35,138,Nevada,2017,5/8/17,isolate,NV,0,176,0.999999809,1.91E-07,2,4,Overton Wildlife Management Area,,Pseudacris,regilla,36.516331,-114.413044
+LBP129,139,Nevada,2018,3/29/18,swab,NV,0,118,9.90E-08,0.999999901,1,3,Lower Blue Point,,Rana,onca,36.38832,-114.420311
+BP64,140,Nevada,2018,4/14/18,swab,NV,0,115,0.999999692,3.08E-07,2,1,"Beatty, Nevada",,Anaxrus,nelsoni,36.998383,-116.719498
+Bd_JEL238,141,Reference,,,isolate,,0,,1.10E-06,0.999998903,1,,,,,,,
+SERDP_19_13,142,Pennsylvania,2019,6/25/19,swab,PA,0.0387597,158,0.599155704,0.400844296,0,3,Housing/Hatchery,LICL,Lithobates,clamitans,41.64414,-80.42944
+SERDP_18_35,143,Pennsylvania,2018,5/4/18,swab,PA,0,165,5.84E-06,0.999994155,1,3,Housing/Hatchery,LICA,Lithobates,catesbeianus,41.64414,-80.42944
+SERDP_55,144,Pennsylvania,2017,5/11/17,swab,PA,0.286822,125,0.000128919,0.999871081,1,2,RV,LICA,Lithobates,catesbeianus,41.82667,-80.5075
+Bd_RioMaria,145,Reference,,,isolate,,0.0310078,152,0.999999974,2.56E-08,2,,,,,,,
+SERDP_19_47,146,Pennsylvania,2019,6/19/19,swab,PA,0.162791,124,0.000184139,0.999815861,1,2,RV,HYVE,Hyla,versicolor,41.82667,-80.5075
+Bd_NBRC106979,147,Reference,,,isolate,,0,,0.99999998,2.01E-08,2,,,,,,,
+Bd_MexMkt,148,Reference,,,isolate,,0,162,7.81E-06,0.999992186,1,,,,,,,
+SERDP_18_133,149,Pennsylvania,2018,4/3/18,swab,PA,0,169,6.09E-06,0.99999391,1,4,Cow Pit,LICA,Lithobates,catesbeianus,41.75694,-80.71778
+Bd_Pc_CN_JLV,150,Reference,,,isolate,,0,118,0.999999986,1.39E-08,2,,,,,,,
