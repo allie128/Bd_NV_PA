@@ -1,6 +1,8 @@
 ---
 title: "PA_NV_ambig_seq_analysis_for_tree"
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 Let's load the libraries we will need
@@ -68,6 +70,14 @@ files_NV_90 <- filter(length_table_NV, length>50)
 filenames_NV_90 <- files_NV_90$file
 length(filenames_NV_90)
 
+#get list that includes all samples with at least 50 sequences from both NV and PA (and the refs too)
+
+files_all_90 <- bind_rows(files_PA_90, files_NV_90)
+#remove duplicate reference samples
+files_all_90 <- files_all_90[-c(1:13),]
+filenames_all_90 <- files_all_90$file
+length(filenames_all_90)
+
 ```
 
 Now that we have the samples selected, let's fill in a matrix m with the sequences. Each row is a sample and each column is a locus.
@@ -83,6 +93,11 @@ m_NV <-matrix(NA, nrow=nrow(files_NV_90), ncol=243)
 colnames(m_NV) <- seq(1,243)
 rownames(m_NV) <- files_NV_90$sample
 seq_matrix <- as_tibble(m_NV)
+
+m_all <- matrix(NA, nrow=nrow(files_all_90), ncol=243)
+colnames(m_all) <- seq(1,243)
+rownames(m_all) <- files_all_90$sample
+seq_matrix <- as_tibble(m_all)
 
 #populate the empty matrix with the ambiguities sequences for PA
 for (i in 1:length(filenames_PA_90)){
@@ -102,6 +117,15 @@ for (i in 1:length(filenames_NV_90)){
      }
 }
 
+#populate the empty matrix with the ambiguities sequences for the combined dataset
+for (i in 1:length(filenames_all_90)){
+  seq <- readDNAStringSet(filenames_all_90[i])
+  for (j in 1:length(seq)){
+    col_match <- as.numeric(names(seq))
+    m_all[i,col_match[j]] <- as.character(seq[j])
+     }
+}
+
 ```
 
 Now we have a matrix m with samples as rows and primers as columns. First we can eliminate primers with no data. Let's get the average length of each sequence to determine which has no data. We can also find the min max and mean sequence length to identify potential bad sequences. 
@@ -114,6 +138,9 @@ n_bases_PA[,1] <- colnames(m_PA)
 n_bases_NV <- matrix(NA, nrow=ncol(m_NV), ncol=7)
 n_bases_NV[,1] <- colnames(m_NV)
   
+n_bases_all <- matrix(NA, nrow=ncol(m_all), ncol=7)
+n_bases_all[,1] <- colnames(m_all)
+
 #characterize each locus
 for (i in 1:ncol(m_PA)){
   n_bases_PA[i,2] <- mean(nchar(m_PA[,i]),na.rm=T)
@@ -133,9 +160,18 @@ for (i in 1:ncol(m_NV)){
   n_bases_NV[i,7] <- sum(is.na(m_NV[,i]))
 }
 
+for (i in 1:ncol(m_all)){
+  n_bases_all[i,2] <- mean(nchar(m_all[,i]),na.rm=T)
+  n_bases_all[i,3] <- min(nchar(m_all[,i]),na.rm=T)
+  n_bases_all[i,4] <- max(nchar(m_all[,i]),na.rm=T)
+  n_bases_all[i,5] <- median(nchar(m_all[,i]),na.rm=T)
+  n_bases_all[i,6] <- max(nchar(m_all[,i]),na.rm=T) - min(nchar(m_all[,i]),na.rm=T)
+  n_bases_all[i,7] <- sum(is.na(m_all[,i]))
+}
+
 colnames(n_bases_PA) <- c("amp","mean","min","max","median","diff","sum")
 colnames(n_bases_NV) <- c("amp","mean","min","max","median","diff","sum")
-
+colnames(n_bases_all) <- c("amp","mean","min","max","median","diff","sum")
 ```
 
 Now let's explore the problem amps. These are ones missing too much data.
@@ -154,8 +190,11 @@ m_trim_PA <- m_PA[,-badamps_both]
 
 m_trim_NV <- m_NV[,-badamps_both]
 
+m_trim_all <- m_all[,-badamps_both]
+
 dim(m_trim_PA) 
 dim(m_trim_NV)
+dim(m_trim_all)
 
 ```
 
@@ -166,6 +205,7 @@ For each sample with data, aligns all loci separately. This is done only for the
 #run once
 dir.create("PA_locus_align")
 dir.create("NV_locus_align")
+dir.create("all_locus_align")
 
 #aligns all seqs (removing those with NAs) and writes them out as a separate fasta into their respective directories 
 
@@ -186,6 +226,15 @@ for (i in 1:ncol(m_trim_NV)){
   locus_align <- DNAStringSet(locus_align)
   writeXStringSet(locus_align, paste(colnames(m_trim_NV)[i], "_align.fasta", sep=""))
   file.move(paste(colnames(m_trim_NV)[i], "_align.fasta", sep=""), "./NV_locus_align")
+}
+
+for (i in 1:ncol(m_trim_all)){
+  locus_list <- m_trim_all[!is.na(m_trim_all[,i]),i]
+  locus_seq <- DNAStringSet(locus_list)
+  locus_align <- muscle::muscle(locus_seq)
+  locus_align <- DNAStringSet(locus_align)
+  writeXStringSet(locus_align, paste(colnames(m_trim_all)[i], "_align.fasta", sep=""))
+  file.move(paste(colnames(m_trim_all)[i], "_align.fasta", sep=""), "./all_locus_align")
 }
 
 ```
