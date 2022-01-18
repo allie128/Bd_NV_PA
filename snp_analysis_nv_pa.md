@@ -209,9 +209,9 @@ assign1[unassign,] <- 0
 
 #sometimes the 1/2 values are switched and don't necessarily correspond to GPL1/2. Go back and check and fix them with this code if needed.
 #to fix the switched GPL1/2 values
-#assign1[assign1$value==1,] <- 3
-#assign1[assign1$value==2,] <- 1
-#assign1[assign1$value==3,] <- 2
+assign1[assign1$value==1,] <- 3
+assign1[assign1$value==2,] <- 1
+assign1[assign1$value==3,] <- 2
 
 
 #write.csv(cbind(dapc1$posterior, assign1), file="serdp_and_waddle_dapc_posterior_2clust_99cut_2PC_samptrim_90.csv")
@@ -467,7 +467,7 @@ table(strata(pa_genclone, ~Site/Species, combine = FALSE))
     ##    2    2    2    1    0    0    5    0    0    1    0
     ##    3    2    1    0    2    0    3    0    5    2    0
     ##    5    0    2    0    0    0    0    4    0    0    1
-    ##    9    0    0    0    0    0    0    0    2    0    0
+    ##    8    0    0    0    0    0    0    0    2    0    0
     ##    4    0    3    0    0    0    6    0    4    0    0
     ##    6    0    1    0    0    0    2    0    0    0    0
     ##    7    0    0    0    0    0    2    0    0    0    0
@@ -642,3 +642,271 @@ plot(NV_signif)
 
 write.table(NV_amova$statphi, sep = ",", file = "NV_AMOVA_stat.csv")
 ```
+
+Calculate heterozygosity among different assigned genotypes
+
+First, I use the program vcftools to run the following command on my
+input vcf:
+
+> ./vcftools –vcf NV\_PA\_Bd\_wrefs\_freebayes\_trimmed\_filtered.vcf
+> –het –out NV\_PA\_Bd\_wrefs\_het
+
+This gave me the output called “NV\_PA\_Bd\_wrefs\_het.het” which I will
+read in here.
+
+``` r
+#read in
+het_all <- read_delim("NV_PA_Bd_wrefs_het.het", delim = "\t",
+           col_names = c("Sample_ID","ho", "he", "nsites", "f"), skip = 1)
+```
+
+    ## 
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## cols(
+    ##   Sample_ID = col_character(),
+    ##   ho = col_double(),
+    ##   he = col_double(),
+    ##   nsites = col_double(),
+    ##   f = col_double()
+    ## )
+
+``` r
+#join to other metadata
+left_join(het_all, vcf.meta, by = "Sample_ID") -> vcf.meta.het
+vcf.meta.het <- mutate(vcf.meta.het, ho_calc=1-(ho/nsites))
+
+#plot by genotype
+
+p <- ggplot(vcf.meta.het, aes(x=as.factor(GENOASSIGN), y=ho_calc, color=as.factor(GENOASSIGN))) + 
+  geom_boxplot()+
+  xlab("Genotype")+
+  ylab("Individual Heterozygosity")+
+  scale_color_manual(values = c("dark grey",cols[2],cols[1])) +
+  theme_bw()
+
+p + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5)+
+    geom_signif(comparisons = list(c("0","1")), 
+              map_signif_level=T)+
+  geom_signif(comparisons = list(c("0","2")), 
+              map_signif_level=T, y_position = 0.52)
+```
+
+    ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
+
+![](snp_analysis_nv_pa_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+Calculate pairwise genetic distance and plot vs geographic distance
+
+``` r
+#calculate pairwise genetic distance
+pa.dist <- poppr::bitwise.dist(gl.pa, mat=T)
+
+nv.dist <- poppr::bitwise.dist(gl.nv, mat=T)
+
+
+#calcualte geo dist
+nv_pts <- cbind(nv.vcf.meta$Sample_ID, nv.vcf.meta$Lat, nv.vcf.meta$Lon)
+colnames(nv_pts) <- c("name","lat","lon")
+write.csv(nv_pts, file="nv_geo_pts.csv")
+samples_loc_nv <- read.csv("nv_geo_pts.csv", header = T)
+
+pa_pts <- cbind(pa.vcf.meta$Sample_ID, pa.vcf.meta$Lat, pa.vcf.meta$Lon)
+colnames(pa_pts) <- c("name","lat","lon")
+write.csv(pa_pts, file="pa_geo_pts.csv")
+samples_loc_pa <- read.csv("pa_geo_pts.csv", header = T)
+
+
+#functions for calculating geo dist
+ReplaceLowerOrUpperTriangle <- function(m, triangle.to.replace){
+   # If triangle.to.replace="lower", replaces the lower triangle of a square matrix with its upper triangle.
+   # If triangle.to.replace="upper", replaces the upper triangle of a square matrix with its lower triangle.
+
+   if (nrow(m) != ncol(m)) stop("Supplied matrix must be square.")
+   if      (tolower(triangle.to.replace) == "lower") tri <- lower.tri(m)
+   else if (tolower(triangle.to.replace) == "upper") tri <- upper.tri(m)
+   else stop("triangle.to.replace must be set to 'lower' or 'upper'.")
+   m[tri] <- t(m)[tri]
+   return(m)
+}
+
+GeoDistanceInMetresMatrix <- function(df.geopoints){
+   # Returns a matrix (M) of distances between geographic points.
+   # M[i,j] = M[j,i] = Distance between (df.geopoints$lat[i], df.geopoints$lon[i]) and
+   # (df.geopoints$lat[j], df.geopoints$lon[j]).
+   # The row and column names are given by df.geopoints$name.
+
+   GeoDistanceInMetres <- function(g1, g2){
+      # Returns a vector of distances. (But if g1$index > g2$index, returns zero.)
+      # The 1st value in the returned vector is the distance between g1[[1]] and g2[[1]].
+      # The 2nd value in the returned vector is the distance between g1[[2]] and g2[[2]]. Etc.
+      # Each g1[[x]] or g2[[x]] must be a list with named elements "index", "lat" and "lon".
+      # E.g. g1 <- list(list("index"=1, "lat"=12.1, "lon"=10.1), list("index"=3, "lat"=12.1, "lon"=13.2))
+      DistM <- function(g1, g2){
+         require("Imap")
+         return(ifelse(g1$index > g2$index, 0, gdist(lat.1=g1$lat, lon.1=g1$lon, lat.2=g2$lat, lon.2=g2$lon, units="m")))
+      }
+      return(mapply(DistM, g1, g2))
+   }
+
+   n.geopoints <- nrow(df.geopoints)
+
+   # The index column is used to ensure we only do calculations for the upper triangle of points
+   df.geopoints$index <- 1:n.geopoints
+
+   # Create a list of lists
+   list.geopoints <- by(df.geopoints[,c("index", "lat", "lon")], 1:n.geopoints, function(x){return(list(x))})
+
+   # Get a matrix of distances (in metres)
+   mat.distances <- ReplaceLowerOrUpperTriangle(outer(list.geopoints, list.geopoints, GeoDistanceInMetres), "lower")
+
+   # Set the row and column names
+   rownames(mat.distances) <- df.geopoints$name
+   colnames(mat.distances) <- df.geopoints$name
+
+   return(mat.distances)
+}
+
+
+#calculate the distance matrix
+
+distance.mat.m.nv <- GeoDistanceInMetresMatrix(samples_loc_nv)
+```
+
+    ## Loading required package: Imap
+
+    ## 
+    ## Attaching package: 'Imap'
+
+    ## The following object is masked from 'package:purrr':
+    ## 
+    ##     imap
+
+``` r
+distance.mat.m.pa <- GeoDistanceInMetresMatrix(samples_loc_pa)
+
+dim(nv.dist)
+```
+
+    ## [1] 52 52
+
+``` r
+dim(distance.mat.m.nv)
+```
+
+    ## [1] 52 52
+
+``` r
+geo_dist_nv <- distance.mat.m.nv[lower.tri(distance.mat.m.nv)]
+gen_dist_nv <- nv.dist[lower.tri(nv.dist)]
+
+plot(geo_dist_nv/1000, gen_dist_nv, xlab="Geographic Distance (km)", ylab="Genetic Distance")
+abline(0.1309, 0.0005007, col = "gray", lty = 3, lwd=2)
+```
+
+![](snp_analysis_nv_pa_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+``` r
+#pa
+
+dim(pa.dist)
+```
+
+    ## [1] 71 71
+
+``` r
+dim(distance.mat.m.pa)
+```
+
+    ## [1] 71 71
+
+``` r
+geo_dist_pa <- distance.mat.m.pa[lower.tri(distance.mat.m.pa)]
+gen_dist_pa <- pa.dist[lower.tri(pa.dist)]
+
+plot(geo_dist_pa/1000, gen_dist_pa, xlab="Geographic Distance (km)", ylab="Genetic Distance")
+abline(0.1511933, 0.002277, col = "gray", lty = 3, lwd=2)
+```
+
+![](snp_analysis_nv_pa_files/figure-gfm/unnamed-chunk-11-2.png)<!-- -->
+
+``` r
+#mantel test
+
+mantel(distance.mat.m.nv, nv.dist)
+```
+
+    ## 
+    ## Mantel statistic based on Pearson's product-moment correlation 
+    ## 
+    ## Call:
+    ## mantel(xdis = distance.mat.m.nv, ydis = nv.dist) 
+    ## 
+    ## Mantel statistic r: 0.3909 
+    ##       Significance: 0.001 
+    ## 
+    ## Upper quantiles of permutations (null model):
+    ##    90%    95%  97.5%    99% 
+    ## 0.0354 0.0591 0.0781 0.1071 
+    ## Permutation: free
+    ## Number of permutations: 999
+
+``` r
+mantel(distance.mat.m.pa, pa.dist)
+```
+
+    ## 
+    ## Mantel statistic based on Pearson's product-moment correlation 
+    ## 
+    ## Call:
+    ## mantel(xdis = distance.mat.m.pa, ydis = pa.dist) 
+    ## 
+    ## Mantel statistic r: 0.1334 
+    ##       Significance: 0.001 
+    ## 
+    ## Upper quantiles of permutations (null model):
+    ##    90%    95%  97.5%    99% 
+    ## 0.0300 0.0393 0.0492 0.0585 
+    ## Permutation: free
+    ## Number of permutations: 999
+
+``` r
+#for plotting a lm
+gen_dist_dist_nv <- as.dist(nv.dist)
+geo_km_dist_dist_nv <- as.dist(distance.mat.m.nv)
+
+gen_dist_dist_pa <- as.dist(pa.dist)
+geo_km_dist_dist_pa <- as.dist(distance.mat.m.pa)
+
+#for plotting a lm - use these values to populate the code above
+nv_lm <- lm(gen_dist_dist_nv ~ geo_km_dist_dist_nv)
+#intercept
+nv_lm$coefficients[1]
+```
+
+    ## (Intercept) 
+    ##   0.1309373
+
+``` r
+#slope for km
+nv_lm$coefficients[2]*1000
+```
+
+    ## geo_km_dist_dist_nv 
+    ##        0.0005007361
+
+``` r
+pa_lm <- lm(gen_dist_dist_pa ~ geo_km_dist_dist_pa)
+#intercept
+pa_lm$coefficients[1]
+```
+
+    ## (Intercept) 
+    ##   0.1511933
+
+``` r
+#slope for km
+pa_lm$coefficients[2]*1000
+```
+
+    ## geo_km_dist_dist_pa 
+    ##         0.002276955
